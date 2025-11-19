@@ -3,7 +3,8 @@
 const mongoose = require("mongoose");
 const music = require("./music");
 
-const musiccollection = new mongoose.Schema({
+const musicCollection = new mongoose.Schema(
+  {
   title: { type: String, required: true }, // creates a title for the collection
 
   // music is embedded directly into the collection
@@ -14,8 +15,10 @@ const musiccollection = new mongoose.Schema({
       Genre: String
     }
   ], 
+
+  collection: MusicCollection //name of the database in mongoDB
  
 
 });
 
-module.exports = mongoose.model("music-collection", musiccollection); // export to mongoDB
+module.exports = mongoose.model("MusicCollection", musicCollection); // exporting the model
