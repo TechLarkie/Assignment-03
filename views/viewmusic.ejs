@@ -1,0 +1,21 @@
+<% //page which allows a user to view the music contained within a collection %>
+<%- include("Partials/header")%>
+<h1> <%music-collection.title%></h1>
+
+<h3>Music in this collection:</h3>
+
+<ul>
+  <% music-collection.music.forEach(s => { %>
+    <li><%= s.name %> – <%= s.Musician %> (<%= s.Genre %>)</li>
+  <% }) %>
+</ul>
+
+<h3>Add a Song:</h3>
+<form method="POST" action="/music-collection/<%= music-collection._id %>/music">
+  <input name="name" placeholder="Song Name">
+  <input name="Musician" placeholder="Artist">
+  <input name="Genre" placeholder="Genre">
+  <button>Add Song</button>
+</form>
+
+<a href="/music-collection">Back</a>
