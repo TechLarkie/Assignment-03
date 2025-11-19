@@ -1,1 +1,6 @@
-config/mongoDB-database.js
+#ensuring that the .env contents (such as the connection string) is not commited
+.env
+
+#no need to continually commit dependencies
+node_modules/
+
