@@ -1,2 +1,13 @@
 <%- include("Partials/header") %>
     <h1> <%=title%> </h1>
+
+
+<% // this page is used to actually create the music collection %>
+
+
+<form method="POST" action="/music-collection">
+
+    <input name="title" placeholder="music collection name">
+    <button>Create Music Collection</button>
+
+</form>

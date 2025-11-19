@@ -2,3 +2,19 @@
  <h1><%= title %></h1>
  <p>Welcome to <%= title %></p>
 
+
+<h2>Create a new Music Collection!</h2>
+
+<a href="/music-collection/new"></a>
+
+<ul> <% // creating an unordered list which goes though everything in the createCollection array  %>
+  <% createCollection.forEach(p => { %>
+    <li>
+      <a href="/music-collection/<%= p._id %>"><%= p.title %></a> <% //creates a link for the individual music collections %>
+
+      <form method="POST" action="/music-collection/<%= p._id %>/delete" style="display:inline"> <% //creating the delete form for %>
+        <button>Delete</button>
+      </form>
+    </li>
+  <% }) %>
+</ul>

@@ -24,7 +24,7 @@ app.use('/create-collection', indexRouter);
 app.use('/users', usersRouter);
 
 
-require("./mongoDB-database"); //run the file with the mongoDB connection
+require("./config/mongoDB-database"); //run the file with the mongoDB connection
 app.use(express.urlencoded({ extended: true })); //allows HTML form data to be read
 
 //connect the music collection routes to app.js
