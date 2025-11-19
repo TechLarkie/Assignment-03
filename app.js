@@ -27,6 +27,9 @@ app.use('/users', usersRouter);
 require("./mongoDB-database"); //run the file with the mongoDB connection
 app.use(express.urlencoded({ extended: true })); //allows HTML form data to be read
 
+//connect the music collection routes to app.js
+const musiccollectionRouter = require("./routes/music-collection");
+app.use("/music-collection", musiccollectionRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
