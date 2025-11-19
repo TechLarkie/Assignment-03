@@ -5,6 +5,8 @@
 // creating the 'music' model, which serves as a template for what is actually stored when a user types in the songs which they like
 
 
+const mongoose = reqiure("mongoose");
+
 let musicModel = mongoose.Schema(
     {
         name: String,
