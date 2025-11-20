@@ -18,9 +18,12 @@ router.get("/", async (req, res) => {
 });
 
 //using router.get to obtain a specific music collection
-router.get("/:id", async(req,res) => {
-  const musiccollection = await musiccollection.findById(req.params.id);
-  res.render("music-collection/view", { musiccollection });
+router.get("/:id", async(req,res, next) => {
+  const collection = await MusicCollection.findById(req.params.id);
+  if(!collection){
+    return res.status(404).send("Music Collection you requested could not be found :(")
+  }
+  res.render("viewmusic", {title: collection.title, collection});
 });
 
 //this will route to the page which will have the music collection creation tool
