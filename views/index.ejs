@@ -1,14 +1,19 @@
+<!--INDEX (Landing) Page-->
+
 <%- include("Partials/header")%>
+<body>
+ <head>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <h1><%= title %></h1>
+ </head>
 
- <h1><%= title %></h1>
 
 
+  <h2>View A Music Collection!</h2>
 
-<h2>View A Music Collection!</h2>
+  <a href="views/create-collection"></a>
 
-<a href="views/create-collection"></a>
-
-<ul> <% // creating an unordered list which goes though everything in the createCollection array  %>
+  <ul> <% // creating an unordered list which goes though everything in the createCollection array  %>
   <% createCollection.forEach(p => { %>
     <li>
       <a href="/music-collection/<%= p._id %>"><%= p.title %></a> <% //creates a link for the individual music collections %>
@@ -18,6 +23,9 @@
       </form>
     </li>
   <% }) %>
-</ul>
+  </ul>
+
+  
+</body>
 
 <%- include("Partials/footer")%>

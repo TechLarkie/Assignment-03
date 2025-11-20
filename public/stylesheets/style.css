@@ -3,6 +3,15 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+
+h1{
+  text-align: center !important;
+}
+
+body.bg-light{
+    background: linear-gradient(to bottom, indigo, violet) !important;
+}
+
 a {
   color: #00B7FF;
 }
