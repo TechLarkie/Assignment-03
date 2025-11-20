@@ -59,4 +59,22 @@ router.post("/:id/delete", async (req, res, next) => {
   }
 });
 
+
+//delete a specifc song from a music collection
+router.post("/:id/music/:songId/delete", async (req,res,next) =>{
+  try{
+    await MusicCollection.findByIdAndUpdate(req.params.id,{
+      $pull:{
+        music: {_id: req.params.songId}
+      }
+    }
+  );
+
+  res.redirect(`/music-collection/${req.params.id}`);
+
+  } catch(err){
+    next(err);
+  }
+});
+
 module.exports = router;

@@ -4,8 +4,14 @@ body {
 }
 
 
+
+h2{
+  color:honeydew !important;
+}
+
 h1{
   text-align: center !important;
+  color: black !important;
 }
 
 body.bg-light{
@@ -14,4 +20,11 @@ body.bg-light{
 
 a {
   color: #00B7FF;
+}
+
+
+/* Make nav links and their icons white */
+.navbar-dark .navbar-nav .nav-link,
+.navbar-dark .navbar-nav .nav-link .bi {
+  color: #ffffff;
 }

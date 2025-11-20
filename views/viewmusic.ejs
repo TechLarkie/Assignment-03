@@ -5,9 +5,25 @@
 
 <h3>Music in this collection:</h3>
 
-<ul>
-  <% collection.music.forEach(s => { %>
-    <li><%= s.name %> – <%= s.Musician %> (<%= s.Genre %>)</li>
+<ul class="list-group mb-4">
+  <% collection.music.forEach(song => { %>
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+      <span>
+        <strong><%= song.name %></strong>
+        – <%= song.Musician %> (<%= song.Genre %>)
+      </span>
+
+      <!-- Remove this specific song from the collection -->
+      <form
+        method="POST"
+        action="/music-collection/<%= collection._id %>/music/<%= song._id %>/delete"
+        style="display:inline"
+      >
+        <button class="btn btn-sm btn-outline-danger" type="submit">
+          Remove
+        </button>
+      </form>
+    </li>
   <% }) %>
 </ul>
 
