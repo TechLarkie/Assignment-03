@@ -6,10 +6,10 @@ const MusicCollection = require("../models/music-collection");
 
 
 //using router.get to obtain all music collections in the database
-router.get("/", async (req, res) => {
-  const collection = await MusicCollection.find();
-  res.render("music-collection/index", { collection });
-});
+//router.get("/", async (req, res) => {
+  //const collection = await MusicCollection.find();
+  //res.render("music-collection/index", { collection });
+//});
 
 //using router.get to obtain a specific music collection
 router.get("/:id", async(req,res, next) => {
@@ -21,9 +21,9 @@ router.get("/:id", async(req,res, next) => {
 });
 
 //this will route to the page which will have the music collection creation tool
-router.get("/new", (req, res) => {
-  res.render("music-collection/new");
-});
+//router.get("/new", (req, res) => {
+  //res.render("music-collection/new");
+//});
 
 
 //music collection creation 
@@ -53,7 +53,7 @@ router.post("/:id/music", async (req, res, next) => {
 router.post("/:id/delete", async (req, res, next) => {
   try{
     await MusicCollection.findByIdAndDelete(req.params.id);
-    res.redirect("/music-collection");
+    res.redirect("/");
   } catch (err) {
     next(err);
   }
