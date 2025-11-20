@@ -41,8 +41,8 @@ router.post("/", async (req, res) => {
 
 
 //add song to collection
-router.post("/:id/music", async (req, res) => {
-  await musiccollection.findByIdAndUpdate(req.params.id, {
+router.post("/:id/music", async (req, res, next) => {
+  await MusicCollection.findByIdAndUpdate(req.params.id, {
     $push: {
       songs: {
         name: req.body.name,
@@ -56,9 +56,13 @@ router.post("/:id/music", async (req, res) => {
 });
 
 //delete a music collection
-router.post("/:id/delete", async (req, res) => {
-  await musiccollection.findByIdAndDelete(req.params.id);
-  res.redirect("/music-collection");
+router.post("/:id/delete", async (req, res, next) => {
+  try{
+    await musiccollection.findByIdAndDelete(req.params.id);
+    res.redirect("/music-collection");
+  } catch (err) {
+    next(err);
+  }
 });
 
 module.exports = router;
