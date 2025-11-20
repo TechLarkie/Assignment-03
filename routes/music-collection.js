@@ -13,8 +13,8 @@ router.get("/", (req,res) => {
 
 //using router.get to obtain all music collections in the database
 router.get("/", async (req, res) => {
-  const musiccollection = await musiccollection.find();
-  res.render("music-collection/index", { musiccollection });
+  const MusicCollection = await MusicCollection.find();
+  res.render("music-collection/index", { MusicCollection });
 });
 
 //using router.get to obtain a specific music collection
@@ -58,7 +58,7 @@ router.post("/:id/music", async (req, res, next) => {
 //delete a music collection
 router.post("/:id/delete", async (req, res, next) => {
   try{
-    await musiccollection.findByIdAndDelete(req.params.id);
+    await MusicCollection.findByIdAndDelete(req.params.id);
     res.redirect("/music-collection");
   } catch (err) {
     next(err);
