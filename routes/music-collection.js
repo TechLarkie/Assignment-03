@@ -2,19 +2,13 @@
 
 const express = require("express");
 const router = express.Router();
-const musiccollection = require("../models/music-collection");
-
-
-//redirecting /music-collection to the main landing page
-router.get("/", (req,res) => {
-    res.redirect("/");
-});
+const MusicCollection = require("../models/music-collection");
 
 
 //using router.get to obtain all music collections in the database
 router.get("/", async (req, res) => {
-  const MusicCollection = await MusicCollection.find();
-  res.render("music-collection/index", { MusicCollection });
+  const collection = await MusicCollection.find();
+  res.render("music-collection/index", { collection });
 });
 
 //using router.get to obtain a specific music collection
@@ -44,7 +38,7 @@ router.post("/", async (req, res) => {
 router.post("/:id/music", async (req, res, next) => {
   await MusicCollection.findByIdAndUpdate(req.params.id, {
     $push: {
-      songs: {
+      music: {
         name: req.body.name,
         Musician: req.body.Musician,
         Genre: req.body.Genre
