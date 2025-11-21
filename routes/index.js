@@ -1,3 +1,4 @@
+/*code which serves the index(landing)page of the site */
 var express = require('express');
 var router = express.Router();
 const MusicCollection = require("../models/music-collection"); //import the music collection model which will then query the mongoDB database for its contents

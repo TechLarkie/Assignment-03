@@ -4,10 +4,11 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 require("dotenv").config();
-require("./config/mongoDB-database");
+require("./config/mongoDB-database"); //run the file with the mongoDB connection
+
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var aboutRouter = require('./routes/aboutWebpage');
 
 var app = express();
 
@@ -22,11 +23,10 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
+app.use('/about', aboutRouter);
 app.use('/create-collection', indexRouter);
-app.use('/users', usersRouter);
 
 
-require("./config/mongoDB-database"); //run the file with the mongoDB connection
 app.use(express.urlencoded({ extended: true })); //allows HTML form data to be read
 
 //connect the music collection routes to app.js

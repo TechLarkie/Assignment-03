@@ -4,9 +4,12 @@ body {
 }
 
 
-
 h2{
   color:honeydew !important;
+}
+
+p{
+  color:#000 !important;
 }
 
 h1{
@@ -14,12 +17,17 @@ h1{
   color: black !important;
 }
 
-body.bg-light{
+/*This creates the gradient look to the website background*/
+body.bg-light{ 
     background: linear-gradient(to bottom, indigo, violet) !important;
 }
 
 a {
   color: #00B7FF;
+}
+
+hr{
+  color: #000 !important;
 }
 
 

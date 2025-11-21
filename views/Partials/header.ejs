@@ -18,45 +18,42 @@
 
     <body class="bg-light d-flex flex-column min-vh-100">
 
-<!-- Navagation -->
+<!--Navagation-->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
   <div class="container-fluid px-4">
-    <!--The "Branding"-->
+    <!--The "Branding" for the site, instead of just repeating the sites name, I use a cassette tape image which the user can click on-->
     <a class="navbar-brand" href="/"><i class="bi bi-cassette fs-1"></i></a>
 
-    <!-- Mobile toggler -->
+    <!--This Section turns the nav bar into a 'hamburger'for smaller screens which makes it more user friendly for mobile devices -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarNav" aria-controls="navbarNav"
             aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <!-- Links -->
+    <!--Links-->
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
 
-        <!-- Home / All Collections -->
+        <!--Homepage (same page which will display all of the current collections which are stored in mongoDB)-->
         <li class="nav-item">
           <a class="nav-link" href="/"><i class="bi bi-house"></i>Home</a>
         </li>
 
-        <!-- Create Collection page -->
+        <!--Create Collection page-->
         <li class="nav-item">
           <a class="nav-link" href="/create-collection"><i class="bi bi-collection"></i>Create Collection</a>
         </li>
 
-
+        <li class="nav-item">
+          <a class="nav-link" href="/about"><i class="bi bi-info-circle"></i>About</a>
+        </li>
+        <!--In all of the above links to specific sections of the site I make use of icons to add further styling-->
       </ul>
     </div>
   </div>
 </nav>
 
-<!-- Main page container -->
+<!--Main page container-->
 <div class="container mb-4 flex-grow-1">
-
-
-
-
-
-
 </html>

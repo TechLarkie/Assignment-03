@@ -3,7 +3,7 @@
 <%- include("Partials/header")%>
 <body>
  <head>
-  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel='stylesheet' href='/stylesheets/style.css' /> <!--stylesheet link-->
   <h1><%= title %></h1>
  </head>
 
@@ -18,7 +18,7 @@
     <li>
       <a href="/music-collection/<%= p._id %>"><%= p.title %></a> <% //creates a link for the individual music collections %>
 
-      <form method="POST" action="/music-collection/<%= p._id %>/delete" style="display:inline" class="js-delete-collection-form"> <% //creating the delete form for %>
+      <form method="POST" action="/music-collection/<%= p._id %>/delete" style="display:inline" class="js-delete-collection-form"> <% //creating the delete form for the music collections and prompting the user with a warning once they click the button, once they click ok in the warning popup, the collection will be deleted from the site and from the mongoDB database %>
         <button class="btn btn-sm btn-outline-danger">Delete</button>
       </form>
     </li>

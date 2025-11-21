@@ -1,9 +1,11 @@
+<!--Music Collection Creation page-->
 <%- include("Partials/header") %>
 
     <h1> <%=title%> </h1>
 
 
-<% // this page is used to actually create the music collection %>
+<% // this page is used to actually create the music collection, users are required to give the collection a name before they can proceed, %>
+<% //once the name has been given and the user clicks the button, they will be redirected back to the landing page and be able to view the newly created collection  %>
 
 <form method="POST" action="/music-collection">
 

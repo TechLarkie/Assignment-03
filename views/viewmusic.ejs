@@ -1,11 +1,11 @@
 <% //page which allows a user to view the music contained within a collection %>
 <%- include("Partials/header")%>
 
-<h1> <%=collection.title%></h1>
+<h1> <%=collection.title%></h1> <!--actually displays the title of the specifc collection that user is currently looking at-->
 
 <h3>Music in this collection:</h3>
 
-<ul class="list-group mb-4">
+<ul class="list-group mb-4"> <!--displays each songs name, artist and genre which was entered by the user when they added the songs to the collection-->
   <% collection.music.forEach(song => { %>
     <li class="list-group-item d-flex justify-content-between align-items-center">
       <span>
@@ -21,13 +21,13 @@
       >
         <button class="btn btn-sm btn-outline-danger" type="submit">
           Remove
-        </button>
+        </button> <!--remove button which allows the user to remove the specifc song of their choosing; the code also gives them a warning prompt which they must agree to before they can completely remove the song from both the website and the mongoDB database-->
       </form>
     </li>
   <% }) %>
 </ul>
 
-<h3>Add a Song:</h3>
+<h3>Add a Song:</h3> <!--allows users to add the songs to the collections-->
 <form method="POST" action="/music-collection/<%= collection._id %>/music">
   <input name="name" placeholder="Song Name">
   <input name="Musician" placeholder="Artist">

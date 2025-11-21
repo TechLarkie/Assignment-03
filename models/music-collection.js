@@ -21,4 +21,4 @@ const musicCollection = new mongoose.Schema(
 
 );
 
-module.exports = mongoose.model("MusicCollection", musicCollection); //exporting the model
+module.exports = mongoose.model("MusicCollection", musicCollection); //this allows the model to be exported to other files in the project so that the model can be manipulated via CRUD
