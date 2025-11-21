@@ -3,7 +3,7 @@
 </div> 
 
 <footer class="bg-dark text-white mt-auto py-3">
-  <div class="container text-center small">
+  <div class="container-fluid text-center small">
     &copy; <%= new Date().getFullYear() %> Music Collector • Zeiad Alarkan, All Rigts Reserved
   </div>
 </footer>
@@ -14,3 +14,38 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"> </script>
 
+<!--code to confirm the action of deleting a collection or a specifc song from a collection-->
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Confirm before deleting a collection
+    document.querySelectorAll(".js-delete-collection-form").forEach(function (form) {
+      form.addEventListener("submit", function (e) {
+        const ok = confirm("Are you sure you want to delete this collection? This cannot be undone.");
+        if (!ok) {
+          e.preventDefault();
+        }
+      });
+    });
+
+
+
+    //code which confirms the deletion of a song
+
+    document.querySelectorAll(".js-delete-song-form").forEach(function (form) {
+      form.addEventListener("submit", function (e) {
+        const ok = confirm("Are you sure you want to remove this song from the collection?");
+        if (!ok) {
+          e.preventDefault();
+        }
+      });
+    });
+  });
+</script>
+
+
+
+    
+</body>
+</html>

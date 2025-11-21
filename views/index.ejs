@@ -18,8 +18,8 @@
     <li>
       <a href="/music-collection/<%= p._id %>"><%= p.title %></a> <% //creates a link for the individual music collections %>
 
-      <form method="POST" action="/music-collection/<%= p._id %>/delete" style="display:inline"> <% //creating the delete form for %>
-        <button>Delete</button>
+      <form method="POST" action="/music-collection/<%= p._id %>/delete" style="display:inline" class="js-delete-collection-form"> <% //creating the delete form for %>
+        <button class="btn btn-sm btn-outline-danger">Delete</button>
       </form>
     </li>
   <% }) %>

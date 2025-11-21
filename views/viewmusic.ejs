@@ -1,7 +1,7 @@
 <% //page which allows a user to view the music contained within a collection %>
 <%- include("Partials/header")%>
 
-<h1> <%collection.title%></h1>
+<h1> <%=collection.title%></h1>
 
 <h3>Music in this collection:</h3>
 
@@ -17,7 +17,7 @@
       <form
         method="POST"
         action="/music-collection/<%= collection._id %>/music/<%= song._id %>/delete"
-        style="display:inline"
+        style="display:inline" class="js-delete-song-form"
       >
         <button class="btn btn-sm btn-outline-danger" type="submit">
           Remove
