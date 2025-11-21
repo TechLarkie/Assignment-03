@@ -40,4 +40,8 @@ the site has a very simple layout, and makes use of some stylistic choices to ma
 
 have fun using Music Collector!
 
+Sources used
+https://icons.getbootstrap.com/
+
+
 
